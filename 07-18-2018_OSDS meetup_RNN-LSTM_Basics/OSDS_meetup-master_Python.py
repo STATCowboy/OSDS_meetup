@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error
 
 
-loc = os.path.join('C:/Users/zjbj1/OneDrive - Anadarko/H-Drive/OSDS_Meetup/OSDS_meetup-master/07-18-2018_OSDS meetup_RNN-LSTM_Basics/data/') # this will put the directory data in variable loc
+loc = os.path.join('C:/Users/jj/OneDrive/Documents/GitHub/OSDS_meetup/07-18-2018_OSDS meetup_RNN-LSTM_Basics/data/') # this will put the directory data in variable loc
 
 filenames = os.listdir(loc)
 
@@ -63,12 +63,12 @@ weather_grpd
 weather_grpd.info()
 
 sns.lineplot(x=weather_grpd.iloc[100:230,:].index,y="T (degC)",data=weather_grpd.iloc[100:230,:])
-plt.show();
+plt.show()
 
 fig=plt.figure(figsize=(20,10))
 ax1 = fig.add_subplot(211)
 fig=sm.graphics.tsa.plot_acf(weather_grpd["T (degC)"].values.squeeze(),lags=94,ax=ax1)
-plt.show();
+plt.show()
 
 print('Data Length:', len(weather_grpd))
 print('number of rows to truncate:', len(weather_grpd)%24)
